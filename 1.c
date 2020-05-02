@@ -57,7 +57,7 @@ printf("\n\n\n\t\t") ;
 
 
 printf("     PRESS ENTER TO CONTINUE ") ;
-//scanf("%c" , &ch) ;
+scanf("%c" , &ch) ;
 
 if (ch=='\n')
 game() ;
