@@ -1,0 +1,4 @@
+Dennis Ritchie
+Bjarne Stroustrap
+Linus Torwalds
+Rob Pike
