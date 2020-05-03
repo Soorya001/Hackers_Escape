@@ -1,0 +1,4 @@
+Who is the founder of C language?
+Who is the founder of C++ language?
+Who is the founder of Linux language?
+Who is the founder of Go language?
