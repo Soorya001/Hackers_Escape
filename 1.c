@@ -44,18 +44,22 @@ void celeb()
 void game()
 {
     FILE *q;
-    char dataToBeReadq[100];
+    char dataToBeReadq[100];       // quesetion
     q = fopen("q.txt","r");
+
     FILE *o;
-    char dataToBeReado[100];
+    char dataToBeReado[100];       //options
     o = fopen("o.txt","r");
+
     FILE *a;
-    char dataToBeReada[100];
+    char dataToBeReada[100];      //answers
     a = fopen("a.txt","r");
+
     char ch[50];
     int i,j;
 
-
+    char ch2 ;
+    char ch3 ;
 
 
     clear() ;
@@ -63,55 +67,59 @@ void game()
     printf("You are inside the game now") ;
     gotoxy(23,6) ; printf("--------------------------------") ;
     srand(time(0));
-    int num = 0; 
+    int num = 0;
     printf("%d",num);
 
-    gotoxy(25,8);
+    gotoxy(20,8);
     if (q!=NULL && o!=NULL && a!=NULL)
     {
-        i=9;
+        i=10;
         j=0;
         while(fgets(dataToBeReadq,100,q)!=NULL){
             if (num==j){
             printf( "%s" , dataToBeReadq ) ;
-            gotoxy(25,i);
-            i++;
+            gotoxy(16,i);
+            //i++;
             break;
             }
             else
             j++;
         }
         j=0;
-        while(fgets(dataToBeReado,100,o)!=NULL){
+
+          while((ch2 = getc(o))!='\n') {
             if (num==j){
-                printf("%s",dataToBeReado);
-                break;
+
+                if (ch2 == '-') { i++ ; gotoxy(16,i) ;}
+                else
+                printf("%c" , ch2) ;
+
             }
             else
             j++;
     }
 
-
         fclose(q);
         fclose(o);
 
-
-        gotoxy(20,15) ; printf("ENTER THE RIGHT ANSWER TO GO TO THE NEXT ROUND!!") ;
-
-        gotoxy(30,16) ; ;
-        scanf("%[^\n]%*c" , ch) ;
+        gotoxy(20,15) ; printf("ENTER THE RIGHT OPTION TO GO TO THE NEXT ROUND!!") ;
+        gotoxy(30,17) ; printf("ANSWER: ") ;
 
 
-        
+        scanf("%c" , &ch3) ;
+
+
         j=0;
-        while(fgets(dataToBeReada,50,a)!=NULL){
-            printf("%s ",dataToBeReada);
-            if (num==j && strcmp(ch,dataToBeReada)==0){
+        while((ch2 = getc(a))!='\n'){
+
+              if (num==j && ch2 == ch3 ) {
                 celeb() ;
-                break;
-            }
-            else
-                j++;
+                //continue ;
+                }
+            else {
+                printf("\n\n\t\t\t WRONG ANSWER !!!") ;
+                push() ;
+                j++;   }
         }
     }
 

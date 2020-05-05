@@ -1,17 +1,10 @@
 # Hackers_Escape
-First git repo for a mini project in C
 
 
-WE CANNOT USE CONIO OR ANY OTHER HEADER FILES WHICH ARE NOT UNDER THE GCC , because we have to use GCC only
 
 
-celeb - is the last page for congrats etc , it displays the score
+DONt MAKE ANY CHANGES IN THE 1.C FILE , TRY ALL THE CODES IN THE ROUGH.C AND THEN IF THEY WORK PERFECTLY CHANGE THEM IN 1.C
 
-game - is where the players gets the questions and rounds
+THERE SOME ISSUE WITH THE WHILE LOOP IN GAME() , SO TRY AND RESOLVE IT
 
-
-home - is the first page which the user gets
-
-
-I HAVE DEFINED GOTOXY , CLEAR , ETC FOR USAGE, DO USE THEM
 
