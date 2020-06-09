@@ -28,7 +28,7 @@ void timer()
     }
 }
 
-void celeb()
+void celeb(int score)
 {
     clear();
     gotoxy(35, 5);
@@ -36,6 +36,8 @@ void celeb()
     gotoxy(33, 6);
     printf("------------");
 
+    gotoxy(23 ,8) ;
+    printf("You scored %d !!!!" , score) ;
     push();
     push();
 }
@@ -57,6 +59,7 @@ void game()
 
     int num = 0;
     int j = 0;
+    int marks=0 ;
     while (j < 4)
     {
 
@@ -65,11 +68,8 @@ void game()
         char ans;
         clear();
         gotoxy(25, 5);
-        if (j == 0)
-        {
-            printf("You are inside the game now");
-            gotoxy(23, 6);
-        }
+        printf("You are inside the game now");
+        gotoxy(23, 6);
         printf("--------------------------------");
 
         //printf("%d",num);
@@ -103,27 +103,35 @@ void game()
 
         gotoxy(30, 17);
         printf("ANSWER: ");
-        char optedAnswer;
-        scanf("%c", &optedAnswer);
+        char opt ;
+        scanf("%c", &opt);
         // printf("%c", cha);
 
-        cha = getc(a);
+        cha = fgetc(a);
         // sleep(3);
         push();
 
-        if (cha == ans)
-            printf("\n\n\t\t CORRECT ANSWER !!!");
-
+        if (cha == opt)
+          {  printf("\n\n\t\t CORRECT ANSWER !!! ") ; marks++ ; getchar() ; }
+           
         else
         {
             printf("\n\n\t\t\t WRONG ANSWER !!!");
             push();
             num = 1;
+            getchar() ;
+            break ;
         }
-        // home() ;
-        j++;
+       
+       if(++j==4) break ;
+       
     }
+     printf("\n\n\t\tBack to home page\n\n" ) ;
+     
+     celeb(marks) ;
+   
 }
+
 
 void home()
 {
@@ -143,12 +151,16 @@ void home()
 
     printf("     PRESS ENTER TO CONTINUE ");
     scanf("%c", &ch);
-
+     int sc;
     if (ch == '\n')
-        game();
+     {  
+       game();   }
+        
+   
+ 
 
     //push() ;
-}
+} 
 
 int main()
 {

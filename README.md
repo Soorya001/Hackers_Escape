@@ -1,9 +1,6 @@
 # Hackers_Escape
 
-DONt MAKE ANY CHANGES IN THE 1.C FILE , TRY ALL THE CODES IN THE ROUGH.C AND THEN IF THEY WORK PERFECTLY CHANGE THEM IN 1.C
+DONt MAKE ANY CHANGES IN THE 1.C FILE , TRY ALL THE CODES IN THE ROUGH.C
 
-THERE SOME ISSUE WITH THE WHILE LOOP IN GAME() , SO TRY AND RESOLVE IT
 
-Hello world
-
-Soorya here
+RUN THE ROUGH.C and try to make the console pause after declaring "correct answer" or "wrong answer" !!!!!!
