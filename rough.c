@@ -63,65 +63,97 @@ void game()
         int i, j;
         char cho, cha;
         char ans;
+        int flag = 1;
         clear();
         gotoxy(25, 5);
-        if (j == 0)
+        if (flag)
         {
-            printf("You are inside the game now");
-            gotoxy(23, 6);
-        }
-        printf("--------------------------------");
-
-        //printf("%d",num);
-
-        gotoxy(20, 8);
-
-        i = 10;
-
-        fgets(dataToBeReadq, 100, q); // printing question
-
-        printf("%s", dataToBeReadq);
-
-        gotoxy(16, i);
-        //i++;
-
-        while ((cho = getc(o)) != '\n') // printing options
-        {
-
-            if (cho == '-')
+            if (j == 0)
             {
-                i++;
-                gotoxy(16, i);
+                printf("You are inside the game now");
+                gotoxy(23, 6);
+                // fseek(o, 0, SEEK_SET);
             }
-            else
-                printf("%c", cho);
-        }
-        // //sleep(2) ;
+            printf("--------------------------------");
 
-        gotoxy(20, 15);
-        printf("ENTER THE RIGHT OPTION TO GO TO THE NEXT ROUND!!");
+            //printf("%d",num);
 
-        gotoxy(30, 17);
-        printf("ANSWER: ");
-        char optedAnswer;
-        scanf("%c", &optedAnswer);
-        // printf("%c", cha);
+            gotoxy(20, 8);
 
-        cha = getc(a);
-        // sleep(3);
-        push();
+            i = 10;
 
-        if (cha == ans)
-            printf("\n\n\t\t CORRECT ANSWER !!!");
+            fgets(dataToBeReadq, 100, q); // printing question
 
-        else
-        {
-            printf("\n\n\t\t\t WRONG ANSWER !!!");
+            printf("%s", dataToBeReadq);
+
+            gotoxy(16, i);
+            //i++;
+            int k = 0;
+            char options[70];
+            // while ((cho = getc(o)) != '\n') // printing options
+            // {
+
+            //     if (cho == '-')
+            //     {
+            //         i++;
+            //         gotoxy(16, i);
+            //     }
+            //     else if (k == 100)
+            //     {
+            //         break;
+            //     }
+            //     else
+            //         printf("%c", cho);
+            //     k++;
+            // )
+
+            fscanf(o, "%[^\n]%*c", options);
+            fseek(o, j + strlen(options), SEEK_SET);
+            for (k = 0; k < strlen(options); k++)
+            {
+                if (options[k] == '-')
+                {
+                    i++;
+                    gotoxy(16, i);
+                }
+                else
+                    printf("%c", options[k]);
+            }
+
+            // //sleep(2) ;
+
+            gotoxy(20, 15);
+            printf("ENTER THE RIGHT OPTION TO GO TO THE NEXT ROUND!!");
+
+            gotoxy(30, 17);
+            printf("ANSWER: ");
+            char optedAnswer;
+            scanf("%s", &optedAnswer);
+            // printf("%c", cha);
+
+            fscanf(o, "%[^\n]%*c", &cha); // this is not working. thats why the condition below isnt working. if you are free, check this out!
+            // sleep(3); // even this sleep function is not working
             push();
-            num = 1;
+
+            if (optedAnswer == cha)
+                printf("\n\n\t\t CORRECT ANSWER !!!");
+
+            else
+            {
+                printf("\n\n\t\t\t WRONG ANSWER !!!");
+                push();
+                num = 1;
+                flag = 0;
+            }
+            if (!flag)
+            {
+                push();
+                printf("\t\t\tRETURNING TO HOME!\t\t\t");
+                sleep(1);
+            }
+            // home() ;
+            j++;
         }
-        // home() ;
-        j++;
     }
 }
 

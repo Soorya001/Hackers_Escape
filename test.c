@@ -9,7 +9,7 @@ typedef struct
 
 int main()
 {
-    FILE *p1 = fopen("q.dat", "rb");
+    FILE *p1 = fopen("a.txt", "w");
     Strings s1;
 
     // s1.str = "Who is the founder of C language?\n";
@@ -25,6 +25,10 @@ int main()
     // fwrite(&s1, sizeof(Strings), 1, p1);
 
     // fread(&s1, sizeof(Strings), 1, p1);
+    fprintf(p1, "%s", "1\n");
+    fprintf(p1, "%s", "3\n");
+    fprintf(p1, "%s", "2\n");
+    fprintf(p1, "%s", "4\n");
 
     fclose(p1);
     // fclose(p2);

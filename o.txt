@@ -1,4 +1,4 @@
 1)Dennis Ritchie -2)Linus Torwalds -3)Bjarne Stroustrap -4)Rob Pike
-1)Dennis Ritchie -2)Linus Torwalds -3)Bjarne Stroustrap -4)Rob Pike
-1)Dennis Ritchie -2)Linus Torwalds -3)Bjarne Stroustrap -4)Rob Pike
-1)Dennis Ritchie -2)Linus Torwalds -3)Bjarne Stroustrap -4)Rob Pike
+2)Dennis Ritchie -2)Linus Torwalds -3)Bjarne Stroustrap -4)Rob Pike
+3)Dennis Ritchie -2)Linus Torwalds -3)Bjarne Stroustrap -4)Rob Pike
+4)Dennis Ritchie -2)Linus Torwalds -3)Bjarne Stroustrap -4)Rob Pike
